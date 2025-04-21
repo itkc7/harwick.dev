@@ -31,7 +31,7 @@ const Services = () => {
   };
   return (
     <div id="services" className="min-h-screen flex flex-col justify-center items-center px-4 xl:py-0 py-10">
-      <h2 className="text-4xl font-light mb-32 xl:mt-0 mt-12">Skill-set</h2>
+      <h2 className="text-4xl font-light mb-32 xl:mt-0 mt-12 dark:text-white">Skill-set</h2>
       <div
         className="w-full xl:w-[900px] lg:w-[85 0px] md:w-[600px] grid lg:grid-cols-3
           grid-cols-1 lg:gap-12 gap-32 lg:mb-0 mb-16"
@@ -51,7 +51,7 @@ const Services = () => {
                         duration-500`}
                 ></i>
                 <h3
-                  className="md:text-2xl text-xl font-bold my-4 text-red-500 dark:text-yellow-500 
+                  className="md:text-2xl text-xl font-bold my-4 text-red-500 dark:text-red-500 
                         transition-colors duration-500"
                 >
                   {card.title}
@@ -77,7 +77,7 @@ const Services = () => {
                       <a
                         href="#"
                         key={index}
-                        className="text-lg bg-red-500 dark:bg-yellow-500
+                        className="text-lg bg-red-500 dark:bg-red-500
                                     w-10 aspect-square grid place-items-center text-white rounded-full transition-colors"
                       >
                         {index + 1}
@@ -98,7 +98,7 @@ const Services = () => {
                       <a
                         href="#"
                         key={index}
-                        className="text-lg bg-red-500 dark:bg-yellow-500
+                        className="text-lg bg-red-500 dark:bg-red-500
                                     w-10 aspect-square grid place-items-center text-white rounded-full transition-colors"
                       >
                         {index + 1}

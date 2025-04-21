@@ -59,57 +59,77 @@ const Navbar = () => {
           className={`group lg:text-lg md:text-base text-sm font-light
               lg:mr-12 mr-8 tracking-wide relative ${
                 activeSection === "home"
-                  ? "text-red-500 dark:text-yellow-500"
+                  ? "text-red-500 dark:text-red-500"
                   : "text-gray-900 dark:text-white"
               }`}
           onClick={(e) => handleNavClick(e, "home")}
         >
           Home
           <span
-            className={`absolute -bottom-1 left-0 w-full h-[1px] bg-red-500 dark:bg-yellow-500 transform scale-x-0 group-hover:scale-x-100
+            className={`absolute -bottom-1 left-0 w-full h-[1px] bg-gray-600 dark:bg-red-500 transform scale-x-0 group-hover:scale-x-100
                    group-hover:origin-left origin-right transition duration-300 ${
                      activeSection === "home"
-                       ? "bg-red-500 dark:bg-yellow-500 scale-x-100"
+                       ? "bg-red-500 dark:bg-red-500 scale-x-100"
                        : "bg-gray-900 dark:bg-white scale-x-0"
                    }`}
           ></span>
         </a>
         <a
           href="#services"
-          className={`group lg:text-lg md:text-base text-sm font-light text-gray-600 dark:text-white
+          className={`group lg:text-lg md:text-base text-sm font-light text-gray-600 dark:text-red-500
               lg:mr-12 mr-8 tracking-wide relative ${
                 activeSection === "services"
-                  ? "text-red-500 dark:text-yellow-500"
+                  ? "text-red-500 dark:text-red-500"
                   : "text-gray-900 dark:text-white"
               }`}
           onClick={(e) => handleNavClick(e, "services")}
         >
           Services
           <span
-            className={`absolute -bottom-1 left-0 w-full h-[1px] bg-gray-600 dark:bg-white transform scale-x-0 group-hover:scale-x-100
+            className={`absolute -bottom-1 left-0 w-full h-[1px] bg-gray-600 dark:bg-red-500 transform scale-x-0 group-hover:scale-x-100
                    group-hover:origin-left origin-right transition duration-300 ${
                      activeSection === "services"
-                       ? "bg-red-500 dark:bg-yellow-500 scale-x-100"
+                       ? "bg-red-500 dark:bg-red-500 scale-x-100"
                        : "bg-gray-900 dark:bg-white scale-x-0"
                    }`}
           ></span>
         </a>
         <a
           href="#contact"
-          className={`group lg:text-lg md:text-base text-sm font-light text-gray-600 dark:text-white
+          className={`group lg:text-lg md:text-base text-sm font-light text-gray-600 dark:text-red-500
               lg:mr-12 mr-8 tracking-wide relative ${
                 activeSection === "contact"
-                  ? "text-red-500 dark:text-yellow-500"
+                  ? "text-red-500 dark:text-red-500"
                   : "text-gray-900 dark:text-white"
               }`}
           onClick={(e) => handleNavClick(e, "contact")}
         >
           Contact
           <span
-            className={`absolute -bottom-1 left-0 w-full h-[1px] bg-gray-600 dark:bg-white transform scale-x-0 group-hover:scale-x-100
+            className={`absolute -bottom-1 left-0 w-full h-[1px] bg-gray-600 dark:bg-red-500 transform scale-x-0 group-hover:scale-x-100
                    group-hover:origin-left origin-right transition duration-300 ${
                      activeSection === "contact"
-                       ? "bg-red-500 dark:bg-yellow-500 scale-x-100"
+                       ? "bg-red-500 dark:bg-red-500 scale-x-100"
+                       : "bg-gray-900 dark:bg-white scale-x-0"
+                   }`}
+          ></span>
+        </a>
+        <a
+          href="#lastfm"
+          className={`group lg:text-lg md:text-base text-sm font-light text-gray-600 dark:text-red-500
+              lg:mr-12 mr-8 tracking-wide relative ${
+                activeSection === "lastfm"
+                  ? "text-red-500 dark:text-red-500"
+                  : "text-gray-900 dark:text-white"
+              }`}
+          onClick={(e) => handleNavClick(e, "lastfm")}
+        >
+          LastFM
+          <span
+            className={`absolute -bottom-1 left-0 w-full h-[1px] bg-gray-600 dark:bg-red-500 transform scale-x-0 group-hover:scale-x-100
+                   group-hover:origin-left origin-right transition duration-300 ${
+                     activeSection === "LastFM"
+                       ? "bg-red-500 dark:bg-red-500 scale-x-100"
                        : "bg-gray-900 dark:bg-white scale-x-0"
                    }`}
           ></span>

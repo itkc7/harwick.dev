@@ -61,7 +61,7 @@ const Hero = () => {
             <span
               className={`inline-block xl:w-[380px] md:w-[240px] w-[160px]
                       lg:ml-6 ml-2 font-extrabold transform origin-left transition-transform duration-300
-                      ease-out ${isRotating ? "hidden md:rotate-[100deg]" : "rotate-0"}`}
+                      ease-out text-red-500 dark:text-white ${isRotating ? "hidden md:rotate-[100deg]" : "rotate-0"}`}
             >
               {currentText}
             </span>{" "}
@@ -87,7 +87,7 @@ const Hero = () => {
             <a
               href="#"
               key={index}
-              className="xl:text-3xl md:text-2xl text-red-500 dark:text-yellow-500 dark:hover:text-white hover:text-gray-900
+              className="xl:text-3xl md:text-2xl text-red-500 dark:text-red-500 dark:hover:text-white hover:text-gray-900
                       transition-colors duration-500"
             >
               <i className={social.icon}></i>
@@ -109,14 +109,14 @@ const Hero = () => {
             Looking for new challenges!
           </span>
           <div
-            className={`xl:h-[150px] h-[100] px-3 xl:text-lg md:text-base text-xs 
+            className={`xl:h-[150px] h-[120] px-3 xl:text-lg md:text-base text-xs 
                   font-light text-gray-900 dark:text-gray-200 text-justify tracking-wide overflow-y-auto transform origin-top custom-scrollbar ${
                     isTextVisible ? "scale-y-100" : "scale-y-0"
                   } transition-transform duration-300`}
           >
             <p
               className="xl:py-3 py-1 px-1 [&::first-letter]:text-[30px] [&::first-letter]
-            :ml-5 [&::first-letter]:text-red-500 dark:[&::first-letter]:text-yellow-500"
+            :ml-5 [&::first-letter]:text-red-500 dark:[&::first-letter]:text-red-500"
             >
               {aboutText}
             </p>

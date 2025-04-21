@@ -9,10 +9,10 @@ export const letters = [
 export const professionTexts = ['a Front End', 'a Back End', 'a Full Stack']
 
 export const socialIcons = [
-  { icon: 'bx bxl-instagram-alt' },
-  { icon: 'bx bxl-youtube' },
-  { icon: 'bx bxl-twitter' },
-  { icon: 'bx bxl-facebook-square' },
+  { icon: 'bx bxl-instagram' },
+  { icon: 'bx bxl-linkedin' },
+  { icon: 'bx bxl-github' },
+  { icon: 'bx bxl-discord-alt' },
 ]
 
 export const aboutText = `Nick Brown is a dedicated full-stack web developer with a deep passion for building
