@@ -95,26 +95,6 @@ const Navbar = () => {
           ></span>
         </a>
         <a
-          href="#contact"
-          className={`group lg:text-lg md:text-base text-sm font-light text-gray-600 dark:text-red-500
-              lg:mr-12 mr-8 tracking-wide relative ${
-                activeSection === "contact"
-                  ? "text-red-500 dark:text-red-500"
-                  : "text-gray-900 dark:text-white"
-              }`}
-          onClick={(e) => handleNavClick(e, "contact")}
-        >
-          Contact
-          <span
-            className={`absolute -bottom-1 left-0 w-full h-[1px] bg-gray-600 dark:bg-red-500 transform scale-x-0 group-hover:scale-x-100
-                   group-hover:origin-left origin-right transition duration-300 ${
-                     activeSection === "contact"
-                       ? "bg-red-500 dark:bg-red-500 scale-x-100"
-                       : "bg-gray-900 dark:bg-white scale-x-0"
-                   }`}
-          ></span>
-        </a>
-        <a
           href="#lastfm"
           className={`group lg:text-lg md:text-base text-sm font-light text-gray-600 dark:text-red-500
               lg:mr-12 mr-8 tracking-wide relative ${
@@ -129,6 +109,26 @@ const Navbar = () => {
             className={`absolute -bottom-1 left-0 w-full h-[1px] bg-gray-600 dark:bg-red-500 transform scale-x-0 group-hover:scale-x-100
                    group-hover:origin-left origin-right transition duration-300 ${
                      activeSection === "LastFM"
+                       ? "bg-red-500 dark:bg-red-500 scale-x-100"
+                       : "bg-gray-900 dark:bg-white scale-x-0"
+                   }`}
+          ></span>
+        </a>
+        <a
+          href="#contact"
+          className={`group lg:text-lg md:text-base text-sm font-light text-gray-600 dark:text-red-500
+              lg:mr-12 mr-8 tracking-wide relative ${
+                activeSection === "contact"
+                  ? "text-red-500 dark:text-red-500"
+                  : "text-gray-900 dark:text-white"
+              }`}
+          onClick={(e) => handleNavClick(e, "contact")}
+        >
+          Contact
+          <span
+            className={`absolute -bottom-1 left-0 w-full h-[1px] bg-gray-600 dark:bg-red-500 transform scale-x-0 group-hover:scale-x-100
+                   group-hover:origin-left origin-right transition duration-300 ${
+                     activeSection === "contact"
                        ? "bg-red-500 dark:bg-red-500 scale-x-100"
                        : "bg-gray-900 dark:bg-white scale-x-0"
                    }`}

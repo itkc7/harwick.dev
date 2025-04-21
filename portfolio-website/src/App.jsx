@@ -27,8 +27,8 @@ const App = () => {
           <>
             <Hero />
             <Services />
-            <Contact />
             <CurrentlyPlaying />
+            <Contact />
           </>
         )}
       </div>

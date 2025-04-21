@@ -21,7 +21,7 @@ const NavigationCircles = ({section}) => {
       <div
         className={`w-5 aspect-square border border-red-500  dark:border-red-500 rounded-full
       bg-gray-300 transition-colors duration-500 ${
-        section === "contact" ? "bg-red-500 dark:bg-red-500" : "bg-gray-300"
+        section === "lastfm" ? "bg-red-500 dark:bg-red-500" : "bg-gray-300"
       }`}
       ></div>
       <div
