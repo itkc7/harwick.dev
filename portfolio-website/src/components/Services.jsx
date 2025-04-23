@@ -30,7 +30,7 @@ const Services = () => {
     return position === "bottom" ? "bottom-full" : "top-full";
   };
   return (
-    <div id="services" className="min-h-screen flex flex-col justify-center items-center px-4 xl:py-0 py-10">
+    <div id="services" className="min-h-screen flex flex-col justify-center items-center px-4 xl:py-0 py-8">
       <h2 className="text-4xl font-light mb-32 xl:mt-0 mt-12 dark:text-white">Skill-set</h2>
       <div
         className="w-full xl:w-[900px] lg:w-[85 0px] md:w-[600px] grid lg:grid-cols-3
