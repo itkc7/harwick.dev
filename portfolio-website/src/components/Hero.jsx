@@ -23,8 +23,11 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-      <div id="home" className="w-full h-screen flex flex-col justify-center items-center isolate
-    relative z-10">
+    <div
+      id="home"
+      className="w-full h-screen flex flex-col justify-center items-center isolate
+    relative z-10"
+    >
       <Navbar />
       <div
         className="flex flex-col md:items-center items-start xl:gap-y-10
@@ -61,7 +64,9 @@ const Hero = () => {
             <span
               className={`inline-block xl:w-[380px] md:w-[240px] w-[160px]
                       lg:ml-6 ml-2 font-extrabold transform origin-left transition-transform duration-300
-                      ease-out text-red-500 dark:text-white ${isRotating ? "hidden md:rotate-[100deg]" : "rotate-0"}`}
+                      ease-out text-red-500 dark:text-white ${
+                        isRotating ? "hidden md:rotate-[100deg]" : "rotate-0"
+                      }`}
             >
               {currentText}
             </span>{" "}
@@ -81,11 +86,14 @@ const Hero = () => {
             className={`bx ${isTextVisible ? "bx-book-alt" : "bx-book-open"}`}
           ></i>
         </button>
-              <div className="flex md:gap-12 gap-2 mr-auto absolute md:relative left-4 md:left-auto
-        top-20 md:top-auto flex-col md:flex-row">
+        <div
+          className="flex md:gap-12 gap-2 mr-auto absolute md:relative left-4 md:left-auto
+        top-20 md:top-auto flex-col md:flex-row"
+        >
           {socialIcons.map((social, index) => (
             <a
-              href="#"
+              href={social.link}
+              target="_blank"
               key={index}
               className="xl:text-3xl md:text-2xl text-red-500 dark:text-red-500 dark:hover:text-white hover:text-gray-900
                       transition-colors duration-500"
@@ -122,8 +130,8 @@ const Hero = () => {
             </p>
           </div>
         </div>
-          </div>
-          <NavigationCircles section="home" />
+      </div>
+      <NavigationCircles section="home" />
     </div>
   );
 };

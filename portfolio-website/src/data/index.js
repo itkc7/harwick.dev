@@ -9,11 +9,14 @@ export const letters = [
 export const professionTexts = ['a Front End', 'a Back End', 'a Full Stack']
 
 export const socialIcons = [
-  { icon: 'bx bxl-instagram' },
-  { icon: 'bx bxl-linkedin' },
-  { icon: 'bx bxl-github' },
-  { icon: 'bx bxl-discord-alt' },
-]
+  { icon: "bx bxl-instagram", link: "https://www.instagram.com/khar7/" },
+  {
+    icon: "bx bxl-linkedin",
+    link: "https://www.linkedin.com/in/kyle-harwick/",
+  },
+  { icon: "bx bxl-github", link: "https://github.com/itkc7" },
+  { icon: "bx bxl-discord-alt", link: "https://discordapp.com/users/itkc" },
+];
 
 export const aboutText = `Nick Brown is a dedicated full-stack web developer with a deep passion for building
 modern, high-performance web applications. With a strong foundation in both front-end
