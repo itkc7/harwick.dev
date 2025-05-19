@@ -70,7 +70,7 @@ const Hero = () => {
             >
               {currentText}
             </span>{" "}
-            Web Developer
+            <span className="ml-5">Web Developer</span>
           </span>
         </h1>
         <button

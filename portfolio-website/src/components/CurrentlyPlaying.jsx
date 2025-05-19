@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import NavigationCircles from "./NavigationCircles";
-
+import { LastFmIcon } from "hugeicons-react";
 // Create a browser-compatible Last.fm client
 class BrowserLastFmClient {
   constructor(apiKey) {
@@ -29,11 +29,20 @@ class BrowserLastFmClient {
       limit: params.limit,
     });
   }
+
+  userGetTopAlbums(params) {
+    return this.request("user.getTopAlbums", {
+      user: params.user,
+      period: params.period || "7day", // weekly by default
+      limit: params.limit || 9, // 3x3 grid needs 9 albums
+    });
+  }
 }
 
 export default function CurrentlyPlaying() {
   const [recentTracks, setRecentTracks] = useState(null);
   const [nowPlaying, setNowPlaying] = useState(null);
+  const [weeklyAlbums, setWeeklyAlbums] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -42,13 +51,14 @@ export default function CurrentlyPlaying() {
 
     async function fetchData() {
       try {
-        const data = await lastFm.userGetRecentTracks({
+        // Fetch recent/now playing track
+        const recentTracksData = await lastFm.userGetRecentTracks({
           user: "itkc",
           limit: 1,
         });
 
-        if (data.recenttracks?.track?.length > 0) {
-          const track = data.recenttracks.track[0];
+        if (recentTracksData.recenttracks?.track?.length > 0) {
+          const track = recentTracksData.recenttracks.track[0];
 
           if (track["@attr"]?.nowplaying === "true") {
             setNowPlaying({
@@ -71,6 +81,27 @@ export default function CurrentlyPlaying() {
             });
           }
         }
+
+        // Fetch weekly top albums
+        const weeklyAlbumsData = await lastFm.userGetTopAlbums({
+          user: "itkc",
+          period: "7day",
+          limit: 9,
+        });
+
+        if (weeklyAlbumsData.topalbums?.album) {
+          setWeeklyAlbums(
+            weeklyAlbumsData.topalbums.album.map((album) => ({
+              name: album.name,
+              artist: album.artist.name,
+              art:
+                album.image.find((img) => img.size === "extralarge")?.[
+                  "#text"
+                ] || album.image[3]?.["#text"],
+              playCount: album.playcount,
+            }))
+          );
+        }
       } catch (err) {
         setError(err.message);
         console.error("Error fetching Last.fm data:", err);
@@ -81,7 +112,7 @@ export default function CurrentlyPlaying() {
 
     fetchData();
   }, []);
-  
+
   if (loading) {
     return (
       <div
@@ -110,9 +141,15 @@ export default function CurrentlyPlaying() {
   return (
     <div
       id="lastfm"
-      className="min-h-screen flex flex-col justify-center items-center px-4 xl:py-25 py-20 dark:text-white"
+      className="min-h-screen flex flex-col justify-center items-center px-4 xl:py-45 py-40 dark:text-white"
     >
-      <h2 className="text-4xl font-light mb-32 xl:mt-0 mt-12">LastFM!</h2>
+      <h2 className="text-4xl font-light mb-8 xl:mt-0 mt-12">LastFM!</h2>
+      <a href="https://www.last.fm/user/itkc" target="_blank">
+        <div className="text-[#F44336] dark:text-[#F44336] dark:hover:text-white hover:text-[#212121] transition-colors duration-500 cursor-pointer inline-flex">
+          <LastFmIcon size={48} />
+        </div>
+      </a>
+
       <div
         className="w-full mx-auto relative isolate
                   lg:max-w-[80%] md:max-w-[90%] max-w-[320px]
@@ -148,11 +185,26 @@ export default function CurrentlyPlaying() {
         {/* Weekly Chart Section */}
         <div className="flex flex-col items-center md:items-start gap-4">
           <h3 className="mb-3 sm:mb-2">Weekly Chart</h3>
-          <img
-            src="./public/images/weekly_albums.png"
-            className="lg:w-108 md:w-64"
-            alt="Weekly albums chart"
-          />
+          <div className="grid grid-cols-3 gap-2">
+            {weeklyAlbums.length > 0 ? (
+              weeklyAlbums.map((album, index) => (
+                <div key={index} className="relative group">
+                  <img
+                    src={album.art || "./public/images/default_album.png"}
+                    alt={`${album.name} by ${album.artist}`}
+                    className="lg:w-36 md:w-21 lg:h-35 md:h-20 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 cursor-pointer flex flex-col justify-center items-center p-1 text-xs text-center">
+                    <p className="font-semibold">{album.name}</p>
+                    <p>{album.artist}</p>
+                    <p>{album.playCount} plays</p>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <p>No weekly album data available</p>
+            )}
+          </div>
         </div>
       </div>
       <NavigationCircles section="lastfm" />

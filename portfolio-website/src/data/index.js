@@ -6,7 +6,7 @@ export const letters = [
   { char: 'o', img: 'images/person-img-5.jpg', rotate: '-rotate-15' },
 ]
 
-export const professionTexts = ['a Front End', 'a Back End', 'a Full Stack']
+export const professionTexts = ['a Front End', 'a Back End', 'a Full Stack',]
 
 export const socialIcons = [
   { icon: "bx bxl-instagram", link: "https://www.instagram.com/khar7/" },
@@ -17,6 +17,7 @@ export const socialIcons = [
   { icon: "bx bxl-github", link: "https://github.com/itkc7" },
   { icon: "bx bxl-discord-alt", link: "https://discordapp.com/users/itkc" },
 ];
+
 
 export const aboutText = `Nick Brown is a dedicated full-stack web developer with a deep passion for building
 modern, high-performance web applications. With a strong foundation in both front-end
