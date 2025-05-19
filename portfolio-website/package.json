@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://itkc7.github.io/portfolio-website/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
