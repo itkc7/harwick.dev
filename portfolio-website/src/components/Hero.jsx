@@ -6,20 +6,20 @@ import { letters, professionTexts, aboutText, socialIcons } from "../data/index"
 const Hero = () => {
   const [hoveredLetter, setHoveredLetter] = useState(null);
   const [currentText, setCurrentText] = useState(professionTexts[0]);
-  const [isRotating, setIsRotating] = useState(false);
+  const [fade, setFade] = useState(true);
   const [isTextVisible, setIsTextVisible] = useState(false);
   const [roadImageOpacity, setRoadImageOpacity] = useState(0.5);
   let currentIndex = 0;
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsRotating(true);
+      setFade(false);
       setTimeout(() => {
         currentIndex = (currentIndex + 1) % professionTexts.length;
         setCurrentText(professionTexts[currentIndex]);
-        setIsRotating(false);
+        setFade(true);
       }, 300);
-    }, 5000);
+    }, 2500);
     return () => clearInterval(interval);
   }, []);
   return (
@@ -63,9 +63,9 @@ const Hero = () => {
             I'm{" "}
             <span
               className={`inline-block xl:w-[380px] md:w-[240px] w-[160px]
-                      lg:ml-6 ml-2 font-extrabold transform origin-left transition-transform duration-300
+                      lg:ml-6 ml-2 font-extrabold transition-opacity duration-500
                       ease-out text-red-500 dark:text-white ${
-                        isRotating ? "hidden md:rotate-[100deg]" : "rotate-0"
+                        fade ? "opacity-100" : "opacity-0"
                       }`}
             >
               {currentText}
