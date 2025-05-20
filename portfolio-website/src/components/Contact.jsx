@@ -11,13 +11,14 @@ const Contact = () => {
         Connect with me!
       </h2>
       <form
-        name="contact"
+        name="Contact" // Changed to match case exactly
         method="POST"
         data-netlify="true"
+        netlify-honeypot="bot-field" // Added honeypot for spam protection
         className="flex flex-col lg:space-y-12 space-y-8"
       >
-        <input type="hidden" name="form-name" value="contact" />
-
+        {/* Removed manual form-name input - Netlify will inject it automatically */}
+        <input type="hidden" name="bot-field" /> {/* Honeypot field */}
         <div>
           <label className="sr-only">Your Name</label>
           <input
@@ -30,7 +31,6 @@ const Contact = () => {
             required
           />
         </div>
-
         <div>
           <label className="sr-only">Your Email</label>
           <input
@@ -43,7 +43,6 @@ const Contact = () => {
             required
           />
         </div>
-
         <div>
           <label className="sr-only">Message</label>
           <textarea
@@ -54,7 +53,6 @@ const Contact = () => {
             required
           ></textarea>
         </div>
-
         <div>
           <button
             type="submit"
