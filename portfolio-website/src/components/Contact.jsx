@@ -50,7 +50,7 @@ const Contact = () => {
 
         <textarea
           name="message"
-          placeholder="Message"
+          placeholder="Name and Message!"
           className="md:w-[500px] w-[330px] h-13 pl-3 text-lg outline-0 border border-red-500 dark:border-red-500 placeholder:gray-600 dark:placeholder:red-500/50 min-h-[100px] max-h-[1200px] resize-y p-3 transition-colors duration-500"
           required
         ></textarea>
