@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import Navbar from "./Navbar";
 import NavigationCircles from "./NavigationCircles";
 import {
@@ -14,6 +14,7 @@ const Hero = () => {
   const [fade, setFade] = useState(true);
   const [isTextVisible, setIsTextVisible] = useState(false);
   const [roadImageOpacity, setRoadImageOpacity] = useState(0.5);
+  const [activeAnimations, setActiveAnimations] = useState({});
   let currentIndex = 0;
 
   useEffect(() => {
@@ -27,6 +28,57 @@ const Hero = () => {
     }, 2500);
     return () => clearInterval(interval);
   }, []);
+
+  const handleLetterHover = (index) => {
+    // Don't start new animation if any letters are currently animating
+    if (Object.values(activeAnimations).some(Boolean)) return;
+
+    setHoveredLetter(index);
+
+    // Create wave effect
+    const newActiveAnimations = {};
+    const delayBetweenLetters = 80; // ms between each letter's animation
+
+    // Mark the hovered letter as active immediately
+    newActiveAnimations[index] = true;
+
+    // Animate letters to the left
+    for (let i = index - 1; i >= 0; i--) {
+      const delay = (index - i) * delayBetweenLetters;
+      setTimeout(() => {
+        setActiveAnimations((prev) => ({ ...prev, [i]: true }));
+        setTimeout(() => {
+          setActiveAnimations((prev) => ({ ...prev, [i]: false }));
+        }, 600); // Animation duration
+      }, delay);
+    }
+
+    // Animate letters to the right
+    for (let i = index + 1; i < letters.length; i++) {
+      const delay = (i - index) * delayBetweenLetters;
+      setTimeout(() => {
+        setActiveAnimations((prev) => ({ ...prev, [i]: true }));
+        setTimeout(() => {
+          setActiveAnimations((prev) => ({ ...prev, [i]: false }));
+        }, 600); // Animation duration
+      }, delay);
+    }
+
+    // Clear hovered letter animation after wave completes
+    const totalDuration =
+      Math.max(
+        index * delayBetweenLetters,
+        (letters.length - 1 - index) * delayBetweenLetters
+      ) + 600;
+
+    setTimeout(() => {
+      setActiveAnimations((prev) => ({ ...prev, [index]: false }));
+      setHoveredLetter(null);
+    }, totalDuration);
+
+    setActiveAnimations(newActiveAnimations);
+  };
+
   return (
     <div
       id="home"
@@ -46,11 +98,11 @@ const Hero = () => {
             {letters.map((letter, index) => (
               <span
                 key={index}
-                onMouseEnter={() => setHoveredLetter(index)}
-                onMouseLeave={() => setHoveredLetter(null)}
-                className={`transition-all duration-500 ${
-                  hoveredLetter === index
-                    ? "animate-letter-bounce duration-500 cursor-pointer"
+                onMouseEnter={() => handleLetterHover(index)}
+                onMouseLeave={() => {}}
+                className={`transition-all duration-200 ${
+                  activeAnimations[index] || hoveredLetter === index
+                    ? "animate-letter-bounce cursor-pointer"
                     : "cursor-pointer"
                 }`}
               >
@@ -117,7 +169,7 @@ const Hero = () => {
                   tracking-wide absolute -top-5 xl:right-15 lg:right-26
                   md:right-16 right-10 rotate-[3.5deg] animate-bounce"
           >
-            I love you so much, Seina!
+            Looking for new challenges!
           </span>
           <div
             className={`xl:h-[150px] h-[120] px-3 xl:text-lg md:text-base text-xs 

@@ -46,24 +46,25 @@
     }
 
     @keyframes letter-bounce {
-        0% {
+        0%, 100% {
           transform: translateY(0);
-          animation-timing-function: ease-out;
+        }
+        25% {
+          transform: translateY(-15px);
         }
         50% {
-          transform: translateY(-500px);
-          animation-timing-function: ease-in;
-        }
-        100% {
           transform: translateY(0);
-          animation-timing-function: ease-out;
+        }
+        75% {
+          transform: translateY(-5px);
         }
       }
 }
 
 .animate-letter-bounce {
-    animation: var(--animate-letter-bounce);
-}
+    animation: letter-bounce 0.6s ease;
+    display: inline-block;
+  }
 
 
 @custom-variant dark (&:where(.dark, .dark *));
