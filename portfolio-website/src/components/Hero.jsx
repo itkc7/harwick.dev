@@ -7,14 +7,17 @@ import {
   aboutText,
   socialIcons,
 } from "../data/index";
+import { useTheme } from "../context/ThemeContext";
+
 
 const Hero = () => {
   const [hoveredLetter, setHoveredLetter] = useState(null);
   const [currentText, setCurrentText] = useState(professionTexts[0]);
   const [fade, setFade] = useState(true);
   const [isTextVisible, setIsTextVisible] = useState(false);
-  const [roadImageOpacity, setRoadImageOpacity] = useState(0.5);
+  const [backgroundImageOpacity, setImageOpacity] = useState(0.2);
   const [activeAnimations, setActiveAnimations] = useState({});
+  const { darkMode } = useTheme();
   let currentIndex = 0;
 
   useEffect(() => {
@@ -88,13 +91,13 @@ const Hero = () => {
       <Navbar />
       <div
         className="flex flex-col md:items-center items-start xl:gap-y-10
-          gap-y-3 xl:mb-0 md:mb-20 mb-0"
+          gap-y-3 xl:mb-15 md:mb-20 mb-0 "
       >
         <h1
           className=" flex flex-col xl:space-y-8 md:space-y-4 sm:space-y-2
           xl:text-6xl md:text-4xl sm:text-3xl md:font-normal font-bolder mt-8 md:mt-0"
         >
-          <span className="flex mx-auto md:mx-0">
+          <span className="flex mx-auto md:mx-0  xl:text-6xl ">
             {letters.map((letter, index) => (
               <span
                 key={index}
@@ -102,8 +105,8 @@ const Hero = () => {
                 onMouseLeave={() => {}}
                 className={`transition-all duration-200 ${
                   activeAnimations[index] || hoveredLetter === index
-                    ? "animate-letter-bounce cursor-pointer"
-                    : "cursor-pointer"
+                    ? "animate-letter-bounce cursor-grab"
+                    : "cursor-grab"
                 }`}
               >
                 {"  "}
@@ -125,16 +128,16 @@ const Hero = () => {
             >
               {currentText}
             </span>{" "}
-            <span className="ml-5">Web Developer</span>
+            <span className="ml-5 ">Web Developer</span>
           </span>
         </h1>
         <button
           className="xl:w-[400px] md:w-[300px] w-[270px] bg-gray-900 dark:bg-gray-200 md:py-1 py-0 md:px-4 
         px-2 xl:text-2xl md:text-xl text-base text-white dark:text-gray-900 tracking-widest rounded-r-4xl flex justify-between
-        items-center md:mr-auto md:mx-0 mx-auto transition-colors duration-500"
+        items-center hover:cursor-pointer md:mr-auto md:mx-0 mx-auto transition-colors duration-500"
           onClick={() => setIsTextVisible(!isTextVisible)}
-          onMouseEnter={() => setRoadImageOpacity(0.8)}
-          onMouseLeave={() => setRoadImageOpacity(0.5)}
+          onMouseEnter={() => setImageOpacity(0.4)}
+          onMouseLeave={() => setImageOpacity(0.2)}
         >
           {isTextVisible ? "Hide My Story" : "Read My Story"}
           <i
@@ -159,20 +162,23 @@ const Hero = () => {
         </div>
         <div className="lg:w-600px md:w-[500px] w-[350px] absolute left-1/2 -translate-x-1/2 -z-10">
           <img
-            src="images/road.png"
-            alt="Road Image"
-            className="w-full mx-auto transition-opacity duration-300"
-            style={{ opacity: roadImageOpacity }}
+            src={`${
+              darkMode ? "/images/dark-icon.png" : "/images/main-icon.png"
+            }`}
+            alt=">h"
+            className="w-full relative -top-30 transition-opacity duration-300"
+            style={{ opacity: backgroundImageOpacity }}
           />
           <span
             className="xl:text-xs md:text-[10px] text-[8px] font-bold
                   tracking-wide absolute -top-5 xl:right-15 lg:right-26
                   md:right-16 right-10 rotate-[3.5deg] animate-bounce"
           >
-            Looking for new challenges!
+            {/* insert bouncing text if needed */}
           </span>
+
           <div
-            className={`xl:h-[150px] h-[120] px-3 xl:text-lg md:text-base text-xs 
+            className={`xl:h-[350px]  md:h-[300px] h-[300px] px-3 xl:text-lg md:text-base text-xs relative -top-35
                   font-light text-gray-900 dark:text-gray-200 text-justify tracking-wide overflow-y-auto transform origin-top custom-scrollbar ${
                     isTextVisible ? "scale-y-100" : "scale-y-0"
                   } transition-transform duration-300`}
