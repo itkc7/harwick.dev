@@ -157,7 +157,7 @@ export default function CurrentlyPlaying() {
                   md:justify-between justify-center md:text-left text-center gap-10"
       >
         {/* Now Playing or Recent Track Section */}
-        <div className="flex flex-col items-center md:items-start gap-4">
+        <div className="flex flex-col items-center md:items-start gap-4 xl:ml-30">
           <h3 className="mb-3 sm:mb-2">
             {nowPlaying ? "Now Playing" : "Recently Played"}
           </h3>
@@ -183,7 +183,7 @@ export default function CurrentlyPlaying() {
         </div>
 
         {/* Weekly Chart Section */}
-        <div className="flex flex-col items-center md:items-start gap-4">
+        <div className="flex flex-col items-center md:items-start gap-4 xl:mr-30">
           <h3 className="mb-3 sm:mb-2">Weekly Chart</h3>
           <div className="grid grid-cols-3 gap-2">
             {weeklyAlbums.length > 0 ? (
