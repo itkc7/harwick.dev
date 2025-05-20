@@ -30,7 +30,13 @@ const Contact = () => {
     >
       <h2 className="text-4xl font-light md:mb-32 mb-24 dark:text-white">
         Connect with me!
+        <a href="mailto:kyle@harwick.dev">
+          <h3 className="underlinetext-[#F44336] dark:text-[#F44336] dark:hover:text-white hover:text-[#212121] transition-colors duration-500 cursor-pointer inline-flex cursor-pointer">
+            kyle@harwick.dev
+          </h3>
+        </a>
       </h2>
+
       <form
         name="contact"
         method="POST"
