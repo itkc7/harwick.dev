@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import NavigationCircles from "./NavigationCircles";
 import { LastFmIcon } from "hugeicons-react";
-// Create a browser-compatible Last.fm client
+import { Tooltip } from "react-tooltip";
 class BrowserLastFmClient {
   constructor(apiKey) {
     this.apiKey = apiKey;
@@ -68,6 +68,7 @@ export default function CurrentlyPlaying() {
                 track.image.find((img) => img.size === "extralarge")?.[
                   "#text"
                 ] || track.image[3]?.["#text"],
+              album: track.album["#text"],
             });
           } else {
             setRecentTracks({
@@ -143,7 +144,25 @@ export default function CurrentlyPlaying() {
       id="lastfm"
       className="min-h-screen flex flex-col justify-center items-center px-4 xl:py-30 py-20 dark:text-white"
     >
-      <h2 className="text-4xl font-light mb-8 xl:mt-0 mt-12">LastFM!</h2>
+      <h2 className="text-4xl font-light mb-8 xl:mt-0 mt-12">
+        LastFM!
+        <a
+          data-tooltip-id="tooltip"
+          data-tooltip-content="LastFM is a music tracking app that has a robust API that I used to display my recent music taste!"
+          className="relative"
+        >
+          <sup className="text-xl ml-1 cursor-help">?</sup>
+        </a>
+        <Tooltip
+          id="tooltip"
+          className="!bg-[#212121] !text-white !p-2 !text-sm !max-w-[200px] !rounded-sm !ml-3"
+          place="right sm:right-end"
+          style={{
+            backgroundColor: "#212121",
+            color: "white",
+          }}
+        />
+      </h2>
       <a href="https://www.last.fm/user/itkc" target="_blank">
         <div className="text-[#F44336] dark:text-[#F44336] dark:hover:text-white hover:text-[#212121] transition-colors duration-500 cursor-pointer inline-flex">
           <LastFmIcon size={48} />
@@ -177,9 +196,9 @@ export default function CurrentlyPlaying() {
               ? `${recentTracks.name} by ${recentTracks.artist}`
               : "No recent tracks found"}
           </p>
-          {recentTracks?.album && (
-            <p className="text-sm opacity-75">Album: {recentTracks.album}</p>
-          )}
+          <p className="text-sm opacity-75">
+            Album: {nowPlaying ? nowPlaying.album : recentTracks.album}
+          </p>
         </div>
 
         {/* Weekly Chart Section */}

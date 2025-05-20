@@ -7,6 +7,8 @@ export const letters = [
   { char: "!" },
 ];
 
+import "react-tooltip/dist/react-tooltip.css";
+
 export const professionTexts = ['a Front End', 'a Back End', 'a Full Stack',]
 
 export const socialIcons = [
