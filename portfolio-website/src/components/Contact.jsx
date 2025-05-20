@@ -28,14 +28,14 @@ const Contact = () => {
       id="contact"
       className="h-screen flex flex-col justify-center items-center"
     >
-      <h2 className="text-4xl font-light md:mb-32 mb-24 dark:text-white">
+      <h2 className="text-4xl font-light md:mb-18 mb-14 dark:text-white">
         Connect with me!
-        <a href="mailto:kyle@harwick.dev">
-          <h3 className="underlinetext-[#F44336] dark:text-[#F44336] dark:hover:text-white hover:text-[#212121] transition-colors duration-500 cursor-pointer inline-flex cursor-pointer">
-            kyle@harwick.dev
-          </h3>
-        </a>
       </h2>
+      <a href="mailto:kyle@harwick.dev" target="_blank">
+        <h1 className=" text-2xl md:mb-15 mb-10 underline text-[#F44336] dark:text-[#F44336] dark:hover:text-white hover:text-[#212121] transition-colors duration-500 inline-flex cursor-pointer">
+          kyle@harwick.dev
+        </h1>
+      </a>
 
       <form
         name="contact"
