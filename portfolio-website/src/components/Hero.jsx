@@ -114,7 +114,7 @@ const Hero = () => {
                   tracking-wide absolute -top-5 xl:right-15 lg:right-26
                   md:right-16 right-10 rotate-[3.5deg] animate-bounce"
           >
-            Looking for new challenges!
+            I love you so much, Seina!
           </span>
           <div
             className={`xl:h-[150px] h-[120] px-3 xl:text-lg md:text-base text-xs 
