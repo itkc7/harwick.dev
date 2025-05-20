@@ -14,7 +14,7 @@ const Contact = () => {
       <form
         name="contact"
         method="POST"
-        action="/src/components/Success"
+        action="/portfolio-website/src/components/Success"
         data-netlify="true"
         className="flex flex-col lg:space-y-12 space-y-8"
       >
