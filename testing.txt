@@ -1,0 +1,13 @@
+ <img
+            src={`${
+              darkMode ? "images/dark-icon.png" : "images/main-icon.png"
+            }`}
+            className="md:w-8 w-6 relative md:-bottom-8 -bottom-6 md:-left-15 -left-10"
+          />
+
+<i
+          className={`${
+            darkMode ? "bx bx-sun" : "bx bx-moon"
+          }  relative -bottom-4 md:text-3xl sm:text-2xl text-xl dark:text-gray-200 text-gray-600 sm:ml-4 ml-2 cursor-pointer`}
+          onClick={toggleDarkMode}
+        ></i>
