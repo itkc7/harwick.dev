@@ -1,14 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import NavigationCircles from "./NavigationCircles";
+import ContactSuccess from "./ContactSuccess"; // Import the success component
 
 const Contact = () => {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+
+    fetch("/", {
+      method: "POST",
+      body: new FormData(form),
+    })
+      .then(() => {
+        setSubmitted(true);
+      })
+      .catch((error) => alert(error));
+  };
+
+  if (submitted) {
+    return <ContactSuccess />;
+  }
+
   return (
     <div
       id="contact"
       className="h-screen flex flex-col justify-center items-center"
     >
       <h2 className="text-4xl font-light md:mb-32 mb-24 dark:text-white">
-        {" "}
         Connect with me!
       </h2>
       <form
@@ -16,6 +36,7 @@ const Contact = () => {
         method="POST"
         data-netlify="true"
         className="flex flex-col lg:space-y-12 space-y-8"
+        onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact" />
 
@@ -24,12 +45,14 @@ const Contact = () => {
           name="email"
           placeholder="Email"
           className="md:w-[500px] w-[330px] h-13 pl-3 text-lg outline-0 border border-red-500 dark:border-red-500 placeholder:gray-600 dark:placeholder:red-500/50 transition-colors duration-500"
+          required
         />
 
         <textarea
           name="message"
           placeholder="Message"
           className="md:w-[500px] w-[330px] h-13 pl-3 text-lg outline-0 border border-red-500 dark:border-red-500 placeholder:gray-600 dark:placeholder:red-500/50 min-h-[100px] max-h-[1200px] resize-y p-3 transition-colors duration-500"
+          required
         ></textarea>
 
         <input
