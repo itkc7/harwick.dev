@@ -155,8 +155,14 @@ export default function CurrentlyPlaying() {
         </a>
         <Tooltip
           id="tooltip"
-          className="!bg-[#212121] !text-white !p-2 !text-sm !max-w-[200px] !rounded-sm !ml-3"
-          place="right sm:right-end"
+          className="
+      !bg-[#212121] !text-white !p-3 !text-sm !rounded-sm
+      md:!w-[150px] md:!h-[150px] md:!flex md:!items-center md:!justify-center
+      !max-w-[180px] !whitespace-normal
+    "
+          place="right"
+          positionStrategy="fixed"
+          noArrow={false}
           style={{
             backgroundColor: "#212121",
             color: "white",
