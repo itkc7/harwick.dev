@@ -86,7 +86,7 @@ const Hero = () => {
     <div
       id="home"
       className="w-full h-screen flex flex-col justify-center items-center isolate
-    relative z-10"
+    relative mb-20 z-10"
     >
       <Navbar />
       <div

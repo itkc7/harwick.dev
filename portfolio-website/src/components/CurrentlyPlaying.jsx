@@ -141,7 +141,7 @@ export default function CurrentlyPlaying() {
   return (
     <div
       id="lastfm"
-      className="min-h-screen flex flex-col justify-center items-center px-4 xl:py-45 py-40 dark:text-white"
+      className="min-h-screen flex flex-col justify-center items-center px-4 xl:py-30 py-20 dark:text-white"
     >
       <h2 className="text-4xl font-light mb-8 xl:mt-0 mt-12">LastFM!</h2>
       <a href="https://www.last.fm/user/itkc" target="_blank">
