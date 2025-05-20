@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import NavigationCircles from "./NavigationCircles";
-import { letters, professionTexts, aboutText, socialIcons } from "../data/index";
+import {
+  letters,
+  professionTexts,
+  aboutText,
+  socialIcons,
+} from "../data/index";
 
 const Hero = () => {
   const [hoveredLetter, setHoveredLetter] = useState(null);
@@ -41,18 +46,16 @@ const Hero = () => {
             {letters.map((letter, index) => (
               <span
                 key={index}
-                className="inline-block md:w-38 x-32 xl:-mr-20 -mr-24 relative"
                 onMouseEnter={() => setHoveredLetter(index)}
                 onMouseLeave={() => setHoveredLetter(null)}
+                className={`transition-all duration-500 ${
+                  hoveredLetter === index
+                    ? "animate-letter-bounce duration-500 cursor-pointer"
+                    : "cursor-pointer"
+                }`}
               >
+                {"  "}
                 {letter.char}
-                <img
-                  src={letter.img}
-                  alt={`Hover image ${index + 1}`}
-                  className={`xl:h-36 h-24
-                    absolute bottom-full -translate-x-1/2 ${letter.rotate} 
-                    ${hoveredLetter === index ? "visible" : "invisible"}`}
-                />
               </span>
             ))}
           </span>
