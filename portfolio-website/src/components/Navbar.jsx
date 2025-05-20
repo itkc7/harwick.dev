@@ -10,7 +10,7 @@ const Navbar = () => {
     const handleScroll = () => {
       if (isScrollingRef.current) return;
 
-      const sections = ["home", "services", "contact"];
+      const sections = ["home", "services","lastfm", "contact"];
       sections.forEach((sectionId) => {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -42,7 +42,11 @@ const Navbar = () => {
     items-center xl:px-36 lg:px-24 md:px-12 sm:px-6 px-4 fixed top-0 z-50 bg-white dark:bg-gray-900 transition-colors duration-500"
     >
       <div className="flex items-center sm:gap-x-4 gap-x-2">
-        <a href="#" className="md:text-2xl sm:text-xl text-lg">
+        <a
+          href="#"
+          className="md:text-2xl sm:text-xl text-lg"
+          onClick={(e) => handleNavClick(e, "home")}
+        >
           {" "}
           Kyle Harwick
         </a>
