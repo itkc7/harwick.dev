@@ -142,7 +142,7 @@ export default function CurrentlyPlaying() {
   return (
     <div
       id="lastfm"
-      className="min-h-screen flex flex-col justify-center items-center px-4 xl:py-30 py-20 dark:text-white"
+      className="min-h-screen flex flex-col justify-center items-center px-4 xl:py-30 md:py-20 py-10 dark:text-white "
     >
       <h2 className="text-4xl font-light mb-8 xl:mt-0 mt-12">
         LastFM!
@@ -182,7 +182,7 @@ export default function CurrentlyPlaying() {
                   md:justify-between justify-center md:text-left text-center gap-10"
       >
         {/* Now Playing or Recent Track Section */}
-        <div className="flex flex-col items-center md:items-start gap-4 xl:ml-30">
+        <div className="flex flex-col items-center md:items-start gap-4 xl:ml-30 md:py-0 py-10">
           <h3 className="mb-3 sm:mb-2">
             {nowPlaying ? "Now Playing" : "Recently Played"}
           </h3>
@@ -209,7 +209,7 @@ export default function CurrentlyPlaying() {
 
         {/* Weekly Chart Section */}
         <div className="flex flex-col items-center md:items-start gap-4 xl:mr-30">
-          <h3 className="mb-3 sm:mb-2">Weekly Chart</h3>
+          <h3 className="mb-3 sm:mb-2 relative md:-right-80">Weekly Chart</h3>
           <div className="grid grid-cols-3 gap-2">
             {weeklyAlbums.length > 0 ? (
               weeklyAlbums.map((album, index) => (
@@ -217,7 +217,7 @@ export default function CurrentlyPlaying() {
                   <img
                     src={album.art || "./public/images/default_album.png"}
                     alt={`${album.name} by ${album.artist}`}
-                    className="lg:w-36 md:w-21 lg:h-35 md:h-20 object-cover"
+                    className="xl:w-35 md:w-21 xl:h-34 md:h-20 object-cover"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 cursor-pointer flex flex-col justify-center items-center p-1 text-xs text-center">
                     <p className="font-semibold">{album.name}</p>

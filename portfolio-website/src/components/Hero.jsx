@@ -86,7 +86,7 @@ const Hero = () => {
     <div
       id="home"
       className="w-full h-screen flex flex-col justify-center items-center isolate
-    relative mb-20 z-10"
+    relative mb-20 md:mb-50 z-10"
     >
       <Navbar />
       <div
@@ -166,7 +166,7 @@ const Hero = () => {
               darkMode ? "/images/dark-icon.png" : "/images/main-icon.png"
             }`}
             alt=">h"
-            className="w-full relative -top-30 transition-opacity duration-300"
+            className="w-full relative lg:-top-20 2xl:-top-30 transition-opacity duration-300"
             style={{ opacity: backgroundImageOpacity }}
           />
           <span
@@ -178,7 +178,7 @@ const Hero = () => {
           </span>
 
           <div
-            className={`xl:h-[350px]  md:h-[300px] h-[300px] px-3 xl:text-lg md:text-base text-xs relative -top-35
+            className={`h-[250px] md:h-[300px] xl:h-[350px] px-3 xl:text-lg md:text-base text-xs relative -top-35
                   font-light text-gray-900 dark:text-gray-200 text-justify tracking-wide overflow-y-auto transform origin-top custom-scrollbar ${
                     isTextVisible ? "scale-y-100" : "scale-y-0"
                   } transition-transform duration-300`}
