@@ -139,7 +139,7 @@ const Hero = () => {
           onMouseEnter={() => setImageOpacity(0.4)}
           onMouseLeave={() => setImageOpacity(0.2)}
         >
-          {isTextVisible ? "Hide My Story" : "Read My Story"}
+          {isTextVisible ? "Hide About Me" : "About Me"}
           <i
             className={`bx ${isTextVisible ? "bx-book-alt" : "bx-book-open"}`}
           ></i>
