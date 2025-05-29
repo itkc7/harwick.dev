@@ -118,20 +118,6 @@ export const skillCards = [
   },
   {
     icons: {
-      primary: "bx bxs-file",
-      secondary: "",
-    },
-    title: "Check out my Resume!",
-    description: "",
-    projectCount: 0,
-    hoverPosition: {
-      large: "top",
-      small: "bottom",
-    },
-    links: [],
-  },
-  {
-    icons: {
       primary: "bx bxl-java",
       secondary: "bx bxl-javascript",
       third: "bx bxs-group",
@@ -145,6 +131,21 @@ export const skillCards = [
       small: "bottom",
     },
     links: [],
+  },
+  {
+    icons: {
+      primary: "bx bxs-file",
+      secondary: "",
+    },
+    title: "Check out my Resume!",
+    description: "",
+    projectCount: 0,
+    hoverPosition: {
+      large: "top",
+      small: "bottom",
+    },
+    links: [],
+    isResume: true,
   },
 ];
 
