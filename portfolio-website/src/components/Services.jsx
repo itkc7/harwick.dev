@@ -51,7 +51,7 @@ const Services = () => {
   return (
     <div
       id="services"
-      className="min-h-screen flex flex-col justify-center items-center px-4 xl:py-0 py-8 -mt-18 md:mb-35"
+      className="min-h-screen flex flex-col justify-center items-center px-4 xl:py-12 py-8 -mt-18 md:mb-35"
     >
       <h2 className="text-4xl font-light mb-32 2xl:mt-0 md:mt-15 mt-12 dark:text-white">
         Skill-set and Projects
@@ -63,13 +63,13 @@ const Services = () => {
         {skillCards.map((card, index) => (
           <div
             key={index}
-            className={`lg:max-w-[280px] md:max-w-[400px] max-w-[320px]
-                  w-full mx-auto rounded-sm ring-2 ring-gray-400/20 shadow-md cursor-pointer shadow-gray-700/20 relative isolate
+            className={`lg:max-w-[280px] md:max-w-[400px] max-w-[320px] 
+                  w-full mx-auto rounded-sm ring-2 ring-gray-400/20 shadow-md cursor-default shadow-gray-700/20 relative isolate
                   ${card.isResume ? "resume-card" : ""}
                   transition-all duration-300 ease-in-out
                   ${
                     card.isResume && hoveredCardIndex === index
-                      ? "transform hover:scale-105 hover:shadow-lg hover:shadow-red-500/20"
+                      ? "transform hover:scale-105 hover:shadow-lg cursor-pointer hover:shadow-red-500/20"
                       : ""
                   }
                   ${card.isResume ? "hover:ring-2 hover:ring-red-500" : ""}`}
@@ -84,7 +84,7 @@ const Services = () => {
                 </span>
               </div>
             )}
-            <div className="p-3 bg-gray-200 dark:bg-gray-800 transition-colors duration-500 h-full">
+            <div className="p-3 bg-gray-300 dark:bg-gray-800 transition-colors duration-500 h-full">
               <div className="min-h-[250px]">
                 <i
                   className={`${card.icons.primary} md:text-4xl text-3xl text-gray-900 dark:text-white transition-colors
