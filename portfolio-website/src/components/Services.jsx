@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { skillCards } from "../data/index";
 import NavigationCircles from "./NavigationCircles";
+import { Document } from "react-pdf";
 
 const Services = () => {
   const [isLargeScreen, setIsLargeScreen] = useState(false);
@@ -31,7 +32,7 @@ const Services = () => {
   };
   return (
     <div id="services" className="min-h-screen flex flex-col justify-center items-center px-4 xl:py-0 py-8 -mt-18 md:mb-35">
-      <h2 className="text-4xl font-light mb-32 2xl:mt-0 md:mt-15 mt-12 dark:text-white">Skill-set</h2>
+      <h2 className="text-4xl font-light mb-32 2xl:mt-0 md:mt-15 mt-12 dark:text-white">Skill-set and Projects</h2>
       <div
         className="w-full xl:w-[900px] lg:w-[85 0px] md:w-[600px] grid lg:grid-cols-3
           grid-cols-1 lg:gap-12 gap-32 lg:mb-0 mb-16"
@@ -40,7 +41,7 @@ const Services = () => {
           <div
             key={index}
             className="lg:max-w-[280px] md:max-w-[400px] max-w-[320px]
-                  w-full mx-auto rounded-sm ring-2 ring-gray-400/20 shadow-md shadow-gray-700/20 relative isolate"
+                  w-full mx-auto rounded-sm ring-2 ring-gray-400/20 shadow-md cursor-pointer shadow-gray-700/20 relative isolate"
             onMouseEnter={() => setHoveredCardIndex(index)}
             onMouseLeave={() => setHoveredCardIndex(null)}
           >
@@ -75,7 +76,7 @@ const Services = () => {
                   <div className="flex justify-between">
                     {[...Array(card.projectCount)].map((_, index) => (
                       <a
-                        href="#"
+                        href={card.link}
                         key={index}
                         className="text-lg bg-red-500 dark:bg-red-500
                                     w-10 aspect-square grid place-items-center text-white rounded-full transition-colors"

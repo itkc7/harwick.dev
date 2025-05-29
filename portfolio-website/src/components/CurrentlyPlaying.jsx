@@ -47,7 +47,7 @@ export default function CurrentlyPlaying() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const lastFm = new BrowserLastFmClient("c9c73ee4d3a423cc8375c75f7e733ff1");
+    const lastFm = new BrowserLastFmClient(import.meta.env.VITE_LASTFM_API_KEY);
 
     async function fetchData() {
       try {

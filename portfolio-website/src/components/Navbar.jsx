@@ -88,7 +88,7 @@ const Navbar = () => {
               }`}
           onClick={(e) => handleNavClick(e, "services")}
         >
-          Services
+          Skills
           <span
             className={`absolute -bottom-1 left-0 w-full h-[1px] bg-gray-600 dark:bg-red-500 transform scale-x-0 group-hover:scale-x-100
                    group-hover:origin-left origin-right transition duration-300 ${
