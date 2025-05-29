@@ -64,7 +64,7 @@ const Contact = () => {
         <input
           type="submit"
           value="Stay Connected"
-          className="md:w-[500px] w-[330px] h-13 pl-3 text-lg outline-0 bg-red-500 dark:bg-red-500 text-white dark:text-gray-900 uppercase font-extrabold cursor-pointer tracking-wide shadow-md shadow-gray-700/20 transition-colors duration-500"
+          className="md:w-[500px] w-[330px] h-13 pl-3 text-lg outline-0 bg-red-500 dark:bg-red-500 text-white dark:text-gray-900 uppercase font-extrabold cursor-pointer tracking-wide shadow-md shadow-gray-700/20 dark:hover:text-white hover:text-[#212121] transition-colors duration-500"
         />
       </form>
       <NavigationCircles section="contact" />
