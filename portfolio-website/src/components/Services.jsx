@@ -227,7 +227,7 @@ const Services = () => {
         className={`w-full max-w-4xl mt-30 mx-auto transition-all duration-500 ease-in-out overflow-hidden 
           ${isResumeVisible ? "max-h-[800px] py-8" : "max-h-0 py-0"}`}
       >
-        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
+        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3/build/pdf.worker.min.js">
           {isResumeVisible && (
             <div className="h-[600px] border border-gray-300 rounded-lg shadow-lg">
               <Viewer
