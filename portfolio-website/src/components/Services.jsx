@@ -31,8 +31,13 @@ const Services = () => {
     return position === "bottom" ? "bottom-full" : "top-full";
   };
   return (
-    <div id="services" className="min-h-screen flex flex-col justify-center items-center px-4 xl:py-0 py-8 -mt-18 md:mb-35">
-      <h2 className="text-4xl font-light mb-32 2xl:mt-0 md:mt-15 mt-12 dark:text-white">Skill-set and Projects</h2>
+    <div
+      id="services"
+      className="min-h-screen flex flex-col justify-center items-center px-4 xl:py-0 py-8 -mt-18 md:mb-35"
+    >
+      <h2 className="text-4xl font-light mb-32 2xl:mt-0 md:mt-15 mt-12 dark:text-white">
+        Skill-set and Projects
+      </h2>
       <div
         className="w-full xl:w-[900px] lg:w-[85 0px] md:w-[600px] grid lg:grid-cols-3
           grid-cols-1 lg:gap-12 gap-32 lg:mb-0 mb-16"
@@ -45,10 +50,22 @@ const Services = () => {
             onMouseEnter={() => setHoveredCardIndex(index)}
             onMouseLeave={() => setHoveredCardIndex(null)}
           >
-            <div className="p-3 bg-gray-200 dark:bg-gray-800 transition-colors duration-500">
-              <div>
+            <div className="p-3 bg-gray-200 dark:bg-gray-800 transition-colors duration-500 h-full">
+              <div className="min-h-[250px]">
                 <i
-                  className={`${card.icon} md:text-4xl text-3xl text-gray-900 dark:text-white transition-colors
+                  className={`${card.icons.primary} md:text-4xl text-3xl text-gray-900 dark:text-white transition-colors
+                        duration-500`}
+                ></i>
+                <i
+                  className={`${card.icons.secondary} md:text-4xl text-3xl text-gray-900 dark:text-white transition-colors
+                        duration-500`}
+                ></i>
+                <i
+                  className={`${card.icons.third}  md:text-4xl text-3xl text-gray-900 dark:text-white transition-colors
+                        duration-500`}
+                ></i>
+                <i
+                  className={`${card.icons.fourth}  md:text-4xl text-3xl text-gray-900 dark:text-white transition-colors
                         duration-500`}
                 ></i>
                 <h3
@@ -58,7 +75,7 @@ const Services = () => {
                   {card.title}
                 </h3>
                 <p
-                  className="text-gray-900 dark:text-white md:h-28 h-24 md:text-base text-sm 
+                  className="text-gray-900 dark:text-white md:h-28 h-24 md:text-base text-sm
                         font-light overflow-y-auto custom-scrollbar pr-2 transition-colors duration-500"
                 >
                   {card.description}
@@ -73,46 +90,96 @@ const Services = () => {
                 }`}
               >
                 {isLargeScreen && card.hoverPosition.large === "top" && (
-                  <div className="flex justify-between">
-                    {[...Array(card.projectCount)].map((_, index) => (
-                      <a
-                        href={card.link}
-                        key={index}
-                        className="text-lg bg-red-500 dark:bg-red-500
-                                    w-10 aspect-square grid place-items-center text-white rounded-full transition-colors"
-                      >
-                        {index + 1}
-                      </a>
-                    ))}
+                  <div
+                    className={`flex ${
+                      card.projectCount > 1
+                        ? "justify-between"
+                        : "justify-center"
+                    }`}
+                  >
+                    {card.links?.map(
+                      (linkItem, index) =>
+                        linkItem.url && (
+                          <a
+                            href={
+                              linkItem.url === "#" ? undefined : linkItem.url
+                            }
+                            key={index}
+                            target={linkItem.url === "#" ? undefined : "_blank"}
+                            rel={
+                              linkItem.url === "#"
+                                ? undefined
+                                : "noopener noreferrer"
+                            }
+                            onClick={(e) =>
+                              linkItem.url === "#" && e.preventDefault()
+                            }
+                            className="text-lg bg-red-500 dark:bg-red-500
+                    w-10 aspect-square grid place-items-center text-white rounded-full transition-colors hover:opacity-60 duration-500 transition-opacity"
+                          >
+                            <i
+                              className={`${linkItem.icon} text-xl md:text-3xl`}
+                            ></i>
+                          </a>
+                        )
+                    )}
                   </div>
                 )}
                 <h2
                   className="text-2xl text-center text-gray-900 dark:text-white font-light 
                         tracking-white"
                 >
-                  Projects
+                  {`${
+                    card.projectCount > 1
+                      ? "Projects"
+                      : card.projectCount === 0
+                      ? ""
+                      : "Project"
+                  }`}
                 </h2>
                 {(!isLargeScreen ||
                   (isLargeScreen && card.hoverPosition.large === "bottom")) && (
-                  <div className="flex justify-between">
-                    {[...Array(card.projectCount)].map((_, index) => (
-                      <a
-                        href="#"
-                        key={index}
-                        className="text-lg bg-red-500 dark:bg-red-500
-                                    w-10 aspect-square grid place-items-center text-white rounded-full transition-colors"
-                      >
-                        {index + 1}
-                      </a>
-                    ))}
+                  <div
+                    className={`flex ${
+                      card.projectCount > 1
+                        ? "justify-between"
+                        : "justify-center"
+                    }`}
+                  >
+                    {card.links?.map(
+                      (linkItem, index) =>
+                        linkItem.url && (
+                          <a
+                            href={
+                              linkItem.url === "#" ? undefined : linkItem.url
+                            }
+                            key={index}
+                            target={linkItem.url === "#" ? undefined : "_blank"}
+                            rel={
+                              linkItem.url === "#"
+                                ? undefined
+                                : "noopener noreferrer"
+                            }
+                            onClick={(e) =>
+                              linkItem.url === "#" && e.preventDefault()
+                            }
+                            className="text-lg bg-red-500 dark:bg-red-500
+                    w-10 aspect-square grid place-items-center text-white rounded-full transition-colors hover:opacity-60 duration-500 transition-opacity"
+                          >
+                            <i
+                              className={`${linkItem.icon} text-xl md:text-3xl`}
+                            ></i>
+                          </a>
+                        )
+                    )}
                   </div>
                 )}
               </div>
             </div>
           </div>
         ))}
-          </div>
-          <NavigationCircles section="services"/>
+      </div>
+      <NavigationCircles section="services" />
     </div>
   );
 };

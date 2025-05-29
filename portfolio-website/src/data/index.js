@@ -25,69 +25,126 @@ export const aboutText = `Hi! I’m Kyle Harwick, a recent University of Pittsbu
 
 export const skillCards = [
   {
-    icon: "bx bx-pen",
-    title: "Design",
-    description:
-      "Design is all about creating visually appealing and user-friendly interfaces. I specialize in UI/UX design, ensuring every project balances aesthetics with functionality. Using tools like Figma and Adobe XD, I craft intuitive layouts that enhance user experience. From wireframes to high-fidelity prototypes, I focus on clean, minimal, and modern designs tailored for web and mobile applications.",
+    icons: {
+      primary: "bx bxl-typescript",
+      secondary: "bx bxl-git",
+      third: "bx bxs-data",
+      fourth: "bx bxl-react",
+    },
+    title: "ProdUSE - Lead Backend Dev",
+    description: "",
+    projectCount: 1,
+    hoverPosition: {
+      large: "bottom",
+      small: "bottom",
+    },
+    links: [
+      {
+        url: "https://github.com/e-brent/ProdUSE",
+        icon: "bx bxl-github",
+      },
+    ],
+  },
+  {
+    icons: {
+      primary: "bx bxl-flask",
+      secondary: "bx bxl-python",
+      third: "bx bx-translate",
+      fourth: "bx bxl-docker",
+    },
+    title: "Communication Breakdown",
+    description: "",
     projectCount: 3,
     hoverPosition: {
       large: "bottom",
       small: "bottom",
     },
+    links: [
+      {
+        url: "https://github.com/itkc7/Communication-Breakdown",
+        icon: "bx bxl-github",
+      },
+      {
+        url: "https://communication-breakdown.onrender.com/",
+        icon: "bx bx-link",
+      },
+      {
+        url: "https://github.com/itkc7/Communication-Breakdown-V2",
+        icon: "bx bxl-github",
+      },
+    ],
   },
   {
-    icon: "bx bx-camera",
-    title: "Photography",
-    description:
-      "Photography is an essential part of digital content creation, capturing high-quality visuals that enhance branding and storytelling. I have experience in portrait, landscape, and product photography, ensuring every image is edited and optimized for the web. Understanding lighting, composition, and post-processing allows me to create compelling images that elevate visual communication across various platforms.",
-    projectCount: 4,
+    icons: {
+      primary: "bx bxl-react",
+      secondary: "bx bxl-tailwind-css",
+      third: "bx bxl-netlify",
+      fourth: "bx bx-lock-alt",
+    },
+    title: "harwick.dev",
+    description: "",
+    projectCount: 1,
     hoverPosition: {
       large: "bottom",
       small: "bottom",
     },
+    links: [
+      {
+        url: "https://github.com/itkc7/harwick.dev",
+        icon: "bx bxl-github",
+      },
+    ],
   },
   {
-    icon: "bx bxs-file-doc",
-    title: "Front-End Dev",
-    description:
-      "Front-end development is about bringing designs to life through clean and efficient code. I specialize in HTML, CSS, and JavaScript, along with frameworks like React to build dynamic and interactive web applications. My focus is on performance, accessibility, and responsiveness, ensuring that every website functions flawlessly across all devices and screen sizes.",
-    projectCount: 4,
-    hoverPosition: {
-      large: "bottom",
-      small: "bottom",
+    icons: {
+      primary: "bx bxl-python",
+      secondary: "bx bxs-timer",
+      third: "bx bx-award",
+      fourth: "bx bx-brain",
     },
-  },
-  {
-    icon: "bx bxs-devices",
-    title: "RWD",
-    description:
-      "In today's digital world, ensuring a seamless user experience across all devices is crucial. I implement responsive design techniques using modern CSS frameworks like Tailwind CSS and Bootstrap. By employing fluid grids, flexible layouts, and media queries, I create web pages that look great and function perfectly on desktops, tablets, and smartphones.",
-    projectCount: 3,
-    hoverPosition: {
-      large: "top",
-      small: "bottom",
-    },
-  },
-  {
-    icon: "bx bx-data",
-    title: "Back-End Dev",
-    description:
-      "Back-end development powers the functionality behind web applications. I work with Node.js and databases like MongoDB and PostgreSQL to build secure and scalable server-side applications. Whether handling authentication, managing API requests, or optimizing database queries, I ensure data is processed efficiently and securely to support seamless front-end interactions.",
-    projectCount: 3,
+    title: "Machine Learning EKG Prediction Hackathon",
+    description: "",
+    projectCount: 1,
     hoverPosition: {
       large: "top",
       small: "bottom",
     },
+    links: [
+      {
+        url: "https://github.com/itkc7/EKG-FINAL-PITT-CHALLENGE",
+        icon: "bx bxl-github",
+      },
+    ],
   },
   {
-    icon: "bx bxl-github",
-    title: "Git Version Control",
-    description:
-      "Version control is essential for modern web development, and Git is my go-to tool for managing code efficiently. I use GitHub for collaboration, handling pull requests, merging branches, and tracking project changes. Whether working solo or in a team, I ensure code is well-documented, structured, and easily maintainable through proper versioning practices.",
-    projectCount: 3,
+    icons: {
+      primary: "bx bxs-file",
+      secondary: "",
+    },
+    title: "Check out my Resume!",
+    description: "",
+    projectCount: 0,
     hoverPosition: {
       large: "top",
       small: "bottom",
     },
+    links: [],
+  },
+  {
+    icons: {
+      primary: "bx bxl-java",
+      secondary: "bx bxl-javascript",
+      third: "bx bxs-group",
+      fourth: "bx bx-library",
+    },
+    title: "Miscellaneous Experience",
+    description: "",
+    projectCount: 0,
+    hoverPosition: {
+      large: "top",
+      small: "bottom",
+    },
+    links: [],
   },
 ];
+
