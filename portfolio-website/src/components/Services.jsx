@@ -4,12 +4,6 @@ import NavigationCircles from "./NavigationCircles";
 import { Worker } from "@react-pdf-viewer/core";
 import { Viewer } from "@react-pdf-viewer/core";
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
-import {
-  ZoomOutIcon,
-  ZoomInIcon,
-  FullScreenIcon,
-  DownloadIcon,
-} from "@react-pdf-viewer/core";
 
 //import styles
 import "@react-pdf-viewer/core/lib/styles/index.css";
@@ -53,7 +47,7 @@ const Services = () => {
   const handleResumeClick = () => {
     setIsResumeVisible(!isResumeVisible);
   };
-  
+
   return (
     <div
       id="services"
