@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { skillCards } from "../data/index";
 import NavigationCircles from "./NavigationCircles";
-import { Document } from "react-pdf";
+// import { Document } from "react-pdf";
 
 const Services = () => {
   const [isLargeScreen, setIsLargeScreen] = useState(false);
