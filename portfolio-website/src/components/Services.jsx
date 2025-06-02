@@ -231,7 +231,7 @@ const Services = () => {
           {isResumeVisible && (
             <div className="h-[600px] border border-gray-300 rounded-lg shadow-lg">
               <Viewer
-                fileUrl="/resume.pdf"
+                fileUrl="/harwick-resume.pdf"
                 plugins={[defaultLayoutPluginInstance]}
                 theme={{
                   theme: "dark",
