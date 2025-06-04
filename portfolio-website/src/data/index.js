@@ -21,18 +21,19 @@ export const socialIcons = [
   { icon: "bx bxl-discord-alt", link: "https://discordapp.com/users/itkc" },
 ];
 
-export const aboutText = `Hi! I’m Kyle Harwick, a recent University of Pittsburgh undergraduate with a bachelor’s in science in Digital Narrative and Interactive Design (DNID), with a minor in Japanese Studies. DNID combines the narrative, world-building, creative elements of the English department with the coding, technical, software parts of the School of Computing and Informatics to allow for a better understanding of the intricacies of interactivity and narrative by implementing these in embedded computational systems. My interests focus on UX/UI and web development, and I have experience in frontend, backend, and overall full stack development. I have experience in HTML, CSS, JavaScript, Python, React, React Native, Next.js, and Java, and I am always looking for opportunities to learn new and exciting programming languages. In my free time I enjoy playing video games, watching and playing soccer, listening to music, reading and traveling. Please take a look at my site and feel free to reach out on LinkedIn, Discord, or even shoot me an email!`;
+export const aboutText = `Hi! I'm Kyle Harwick, a recent University of Pittsburgh undergraduate with a bachelor's in science in Digital Narrative and Interactive Design (DNID), with a minor in Japanese Studies. DNID combines the narrative, world-building, creative elements of the English department with the coding, technical, software parts of the School of Computing and Informatics to allow for a better understanding of the intricacies of interactivity and narrative by implementing these in embedded computational systems. My interests focus on UX/UI and web development, and I have experience in frontend, backend, and overall full stack development. I am proficient in HTML, CSS, JavaScript, Python, React, React Native, Next.js, and Java, and I am always looking for opportunities to learn new and exciting programming languages. In my free time I enjoy playing video games, watching and playing soccer, listening to music, reading and traveling. Please take a look at my site and feel free to reach out on LinkedIn, Discord, or even shoot me an email!`;
 
 export const skillCards = [
   {
     icons: {
       primary: "bx bxl-typescript",
-      secondary: "bx bxl-git",
+      secondary: "bx bxl-figma",
       third: "bx bxs-data",
       fourth: "bx bxl-react",
     },
-    title: "ProdUSE - Lead Backend Dev",
-    description: "",
+    title: "ProdUSE",
+    description:
+      "ProdUSE is a virtual fridge made in React Native that my senior capstone team and I tested through Expo GO. Users can log items in their 'fridge' which is then stored in a database (SQL) and keep better track of their items.",
     projectCount: 1,
     hoverPosition: {
       large: "bottom",
@@ -53,7 +54,8 @@ export const skillCards = [
       fourth: "bx bxl-docker",
     },
     title: "Communication Breakdown",
-    description: "",
+    description:
+      "Communication Breakdown is a Japanese-English translation and linguistic breakdown webapp built with Python and Flask. The translation was originally handled through DeepLX API, and I had been hosting this site through Render and had to have a container for this API open at all times. However, this API has deprecated, so I will be rebuilding this project in the near future in a much more robust manner. The linguistic breakdown logic is handlded mainly by SpaCy NLP. Linked is my original Communication Repo, the Render build, and the newer in-progress repo.",
     projectCount: 3,
     hoverPosition: {
       large: "bottom",
@@ -82,7 +84,8 @@ export const skillCards = [
       fourth: "bx bx-lock-alt",
     },
     title: "harwick.dev",
-    description: "",
+    description:
+      "Obviously I had to include this site as a project. This site was built with Vite and Tailwind CSS and hosted on Netlify, and includes LastFM API to handle the music display. This project was extremely useful in many ways, such as teaching myself Vite and Tailwind, as well as adding something else to my portfolio and having a central place to have my projects displayed.",
     projectCount: 1,
     hoverPosition: {
       large: "bottom",
@@ -102,8 +105,9 @@ export const skillCards = [
       third: "bx bx-award",
       fourth: "bx bx-brain",
     },
-    title: "Machine Learning EKG Prediction Hackathon",
-    description: "",
+    title: "Machine Learning EKG Prediction Hackathon Win",
+    description:
+      "This is a machine learning Python algorithm that can predict irregular EKGs and predict when they are wrong. Our project used an RNN model, LTSM (long term short memory). We won first prize for our category, Women's Health.",
     projectCount: 1,
     hoverPosition: {
       large: "top",
@@ -111,8 +115,8 @@ export const skillCards = [
     },
     links: [
       {
-        url: "https://github.com/itkc7/EKG-FINAL-PITT-CHALLENGE",
-        icon: "bx bxl-github",
+        url: "https://devpost.com/software/detecting-ekg-irregularities-with-machine-learning",
+        icon: "bx bx-link",
       },
     ],
   },
@@ -124,7 +128,7 @@ export const skillCards = [
       fourth: "bx bx-library",
     },
     title: "Miscellaneous Experience",
-    description: "",
+    description: "I am proficient in Figma and design overall, and I am well versed in various other languages such as Java and C#. I enjoy working in a team as well as alone, and communication between myself and my team is a quality that I pride myself in. ",
     projectCount: 0,
     hoverPosition: {
       large: "top",
