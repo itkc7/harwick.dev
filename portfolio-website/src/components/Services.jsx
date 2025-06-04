@@ -5,8 +5,6 @@ import { Worker } from "@react-pdf-viewer/core";
 import { Viewer } from "@react-pdf-viewer/core";
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 
-
-
 //import styles
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
@@ -67,6 +65,7 @@ const Services = () => {
             key={index}
             className={`lg:max-w-[280px] md:max-w-[400px] max-w-[320px] 
                   w-full mx-auto rounded-sm ring-2 ring-gray-400/20 shadow-md cursor-default shadow-gray-700/20 relative isolate
+                  h-[280px] md:h-[320px]
                   ${card.isResume ? "resume-card" : ""}
                   transition-all duration-300 ease-in-out
                   ${
@@ -86,8 +85,8 @@ const Services = () => {
                 </span>
               </div>
             )}
-            <div className="p-3 bg-gray-300 dark:bg-gray-800 transition-colors duration-500 h-full">
-              <div className="min-h-[250px]">
+            <div className="p-3 bg-gray-300 dark:bg-gray-800 transition-colors duration-500 h-full flex flex-col">
+              <div className="flex-shrink-0">
                 <i
                   className={`${card.icons.primary} md:text-4xl text-3xl text-gray-900 dark:text-white transition-colors
                         duration-500`}
@@ -116,13 +115,13 @@ const Services = () => {
                 >
                   {card.title}
                 </h3>
-                <p
-                  className="text-gray-900 dark:text-white md:h-28 h-24 md:text-base text-sm
-                        font-light overflow-y-auto custom-scrollbar pr-2 transition-colors duration-500"
-                >
-                  {card.description}
-                </p>
               </div>
+              <p
+                className="text-gray-900 dark:text-white md:text-base text-sm
+                      font-light overflow-y-auto custom-scrollbar pr-2 transition-colors duration-500 flex-1 min-h-0"
+              >
+                {card.description}
+              </p>
               <div
                 className={`w-full absolute left-0 ${getPositionClass(
                   card
@@ -227,7 +226,7 @@ const Services = () => {
         className={`w-full max-w-4xl mt-30 mx-auto transition-all duration-500 ease-in-out overflow-hidden 
           ${isResumeVisible ? "max-h-[800px] py-8" : "max-h-0 py-0"}`}
       >
-        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3/build/pdf.worker.min.js">
+        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
           {isResumeVisible && (
             <div className="h-[600px] border border-gray-300 rounded-lg shadow-lg">
               <Viewer
