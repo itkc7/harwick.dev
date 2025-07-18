@@ -50,14 +50,14 @@ const Contact = () => {
           type="email"
           name="email"
           placeholder="Email"
-          className="md:w-[500px] w-[330px] h-13 pl-3 text-lg outline-0 border border-red-500 dark:border-red-500 placeholder:gray-600 dark:placeholder:red-500/50 transition-colors duration-500"
+          className="md:w-[500px] w-[330px] h-13 pl-3 text-lg outline-0 border text-gray-900 dark:text-white border-red-500 dark:border-red-500 placeholder:gray-600 dark:placeholder:red-500/50 transition-colors duration-500"
           required
         />
 
         <textarea
           name="message"
           placeholder="Name and Message!"
-          className="md:w-[500px] w-[330px] h-13 pl-3 text-lg outline-0 border border-red-500 dark:border-red-500 placeholder:gray-600 dark:placeholder:red-500/50 min-h-[100px] max-h-[1200px] resize-y p-3 transition-colors duration-500"
+          className="md:w-[500px] w-[330px] h-13 pl-3 text-lg outline-0 border text-gray-900 dark:text-white border-red-500 dark:border-red-500 placeholder:gray-600 dark:placeholder:red-500/50 min-h-[100px] max-h-[1200px] resize-y p-3 transition-colors duration-500"
           required
         ></textarea>
 
