@@ -26,6 +26,28 @@ export const aboutText = `Hi! I'm Kyle Harwick, a recent University of Pittsburg
 export const skillCards = [
   {
     icons: {
+      primary: "bx bxl-java",
+      secondary: "bx bxl-javascript",
+      third: "bx bxs-group",
+      fourth: "bx bx-library",
+    },
+    title: "Grass Gurus Lead Web Developer",
+    description:
+      "I recently had the privilege to become the lead and sole developer for a local company's business. Built with React, I had to for the first time effectively communicate with a client in order to achieve a final product. ",
+    projectCount: 1,
+    hoverPosition: {
+      large: "bottom",
+      small: "bottom",
+    },
+    links: [
+      {
+        url: "https://grassgurus.info",
+        icon: "bx bx-link"
+      }
+    ],
+  },
+  {
+    icons: {
       primary: "bx bxl-typescript",
       secondary: "bx bxl-figma",
       third: "bx bxs-data",
@@ -88,7 +110,7 @@ export const skillCards = [
       "Obviously I had to include this site as a project. This site was built with Vite and Tailwind CSS and hosted on Netlify, and includes LastFM API to handle the music display. This project was extremely useful in many ways, such as teaching myself Vite and Tailwind, as well as adding something else to my portfolio and having a central place to have my projects displayed.",
     projectCount: 1,
     hoverPosition: {
-      large: "bottom",
+      large: "top",
       small: "bottom",
     },
     links: [
@@ -105,7 +127,7 @@ export const skillCards = [
       third: "bx bx-award",
       fourth: "bx bx-brain",
     },
-    title: "Machine Learning EKG Prediction Hackathon Win",
+    title: "Machine Learning EKG Prediction Hackathon Winner",
     description:
       "This is a machine learning Python algorithm that can predict irregular EKGs and predict when they are wrong. Our project used an RNN model, LTSM (long term short memory). We won first prize for our category, Women's Health.",
     projectCount: 1,
@@ -119,22 +141,6 @@ export const skillCards = [
         icon: "bx bx-link",
       },
     ],
-  },
-  {
-    icons: {
-      primary: "bx bxl-java",
-      secondary: "bx bxl-javascript",
-      third: "bx bxs-group",
-      fourth: "bx bx-library",
-    },
-    title: "Miscellaneous Experience",
-    description: "I am proficient in Figma and design overall, and I am well versed in various other languages such as Java and C#. I enjoy working in a team as well as alone, and communication between myself and my team is a quality that I pride myself in. ",
-    projectCount: 0,
-    hoverPosition: {
-      large: "top",
-      small: "bottom",
-    },
-    links: [],
   },
   {
     icons: {
