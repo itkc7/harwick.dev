@@ -9,7 +9,7 @@ export const letters = [
 
 import "react-tooltip/dist/react-tooltip.css";
 
-export const professionTexts = ["a Front End", "a Back End", "a Full Stack"];
+export const professionTexts = ["  a Front End", "  a Back End", "  a Full Stack"];
 
 export const socialIcons = [
   { icon: "bx bxl-instagram", link: "https://www.instagram.com/khar7/" },

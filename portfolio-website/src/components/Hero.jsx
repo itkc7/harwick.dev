@@ -59,7 +59,7 @@ const Hero = () => {
               <div className="absolute inset-0 flex justify-center items-center w-full">
                 <div className="flex items-baseline whitespace-nowrap">
                   <span className="xl:text-6xl md:text-4xl text-2xl tracking-wider xl:py-4 py-2">
-                    I'm{" "}
+                    I'm {" "}
                   </span>
 
                   <TextType
