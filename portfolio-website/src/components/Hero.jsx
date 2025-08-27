@@ -14,12 +14,13 @@ const Hero = () => {
   return (
     <div
       id="home"
-      className="w-full min-h-screen flex flex-col justify-center items-center isolate relative pb-20 z-10"
+      className="w-full min-h-screen flex flex-col justify-center items-center relative pb-20 z-10 isolate"
     >
       <Navbar />
+
       <div className="flex flex-col md:items-center items-start xl:gap-y-10 gap-y-6 xl:mb-15 md:mb-20 mb-0 mt-10">
         <h1 className="flex flex-col xl:space-y-8 md:space-y-4 sm:space-y-2 xl:text-6xl md:text-4xl sm:text-3xl md:font-normal font-bolder mt-8 md:mt-0 items-center w-full">
-          {/* First line: Hello - Fades in first */}
+          {/* First line: Hello */}
           <AnimatedContent
             distance={150}
             direction="vertical"
@@ -35,7 +36,7 @@ const Hero = () => {
             <div className="flex justify-center w-full mb-4">Hello!</div>
           </AnimatedContent>
 
-          {/* Second line: I'm a Web Dev with typing effect - Fades in after Hello */}
+          {/* Second line: I'm a Web Dev with typing effect */}
           <AnimatedContent
             distance={150}
             direction="vertical"
@@ -49,7 +50,7 @@ const Hero = () => {
             playOnce={true}
           >
             <div className="flex justify-center items-baseline px-4 w-full relative">
-              {/* Hidden placeholder for consistent spacing */}
+              {/* Hidden placeholder for consistent width */}
               <div className="opacity-0 xl:text-6xl md:text-4xl text-2xl tracking-wider xl:py-4 py-2">
                 I'm a Full Stack Web Developer
               </div>
@@ -61,18 +62,17 @@ const Hero = () => {
                     I'm{" "}
                   </span>
 
-                  <div className="inline-block mx-2">
-                    <TextType
-                      text={professionTexts}
-                      typingSpeed={80}
-                      deleteSpeed={50}
-                      pauseDuration={2000}
-                      showCursor={true}
-                      cursorCharacter="_"
-                      className="xl:text-6xl md:text-4xl text-2xl font-extrabold text-red-500 dark:text-white"
-                      initialDelay={2000}
-                    />
-                  </div>
+                  <TextType
+                    text={professionTexts}
+                    typingSpeed={80}
+                    deleteSpeed={50}
+                    pauseDuration={2000}
+                    showCursor={true}
+                    cursorCharacter="_"
+                    className="xl:text-6xl md:text-4xl text-2xl font-extrabold"
+                    textClassName={darkMode ? "text-white" : "text-gray-900"}
+                    initialDelay={2000}
+                  />
 
                   <span className="xl:text-6xl md:text-4xl text-2xl tracking-wider xl:py-4 py-2">
                     Web Developer
@@ -84,7 +84,7 @@ const Hero = () => {
         </h1>
 
         {/* Social media icons */}
-        <div className="flex md:gap-12 gap-6 mt-4 md:ml-8 flex-col md:flex-row justify-center w-full">
+        <div className="flex flex-row gap-6 md:gap-12 mt-4 md:ml-8 justify-center w-full">
           {socialIcons.map((social, index) => (
             <a
               href={social.link}
@@ -143,6 +143,7 @@ const Hero = () => {
           />
         </div>
       </div>
+
       <NavigationCircles section="home" />
     </div>
   );

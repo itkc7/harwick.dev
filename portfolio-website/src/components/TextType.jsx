@@ -1,4 +1,3 @@
-// TextType.jsx
 "use client";
 
 import {
@@ -20,12 +19,12 @@ const TextType = ({
   deletingSpeed = 30,
   loop = true,
   className = "",
+  textClassName = "", // Tailwind class for text color
   showCursor = true,
   hideCursorWhileTyping = false,
   cursorCharacter = "|",
   cursorClassName = "",
   cursorBlinkDuration = 0.5,
-  textColors = [],
   variableSpeed,
   onSentenceComplete,
   startOnVisible = false,
@@ -51,20 +50,13 @@ const TextType = ({
     return Math.random() * (max - min) + min;
   }, [variableSpeed, typingSpeed]);
 
-  const getCurrentTextColor = () => {
-    if (textColors.length === 0) return "#ffffff";
-    return textColors[currentTextIndex % textColors.length];
-  };
-
   useEffect(() => {
     if (!startOnVisible || !containerRef.current) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          }
+          if (entry.isIntersecting) setIsVisible(true);
         });
       },
       { threshold: 0.1 }
@@ -91,7 +83,6 @@ const TextType = ({
     if (!isVisible) return;
 
     let timeout;
-
     const currentText = textArray[currentTextIndex];
     const processedText = reverseMode
       ? currentText.split("").reverse().join("")
@@ -101,14 +92,9 @@ const TextType = ({
       if (isDeleting) {
         if (displayedText === "") {
           setIsDeleting(false);
-          if (currentTextIndex === textArray.length - 1 && !loop) {
-            return;
-          }
-
-          if (onSentenceComplete) {
-            onSentenceComplete(textArray[currentTextIndex], currentTextIndex);
-          }
-
+          if (currentTextIndex === textArray.length - 1 && !loop) return;
+          if (onSentenceComplete)
+            onSentenceComplete(currentText, currentTextIndex);
           setCurrentTextIndex((prev) => (prev + 1) % textArray.length);
           setCurrentCharIndex(0);
           timeout = setTimeout(() => {}, pauseDuration);
@@ -143,7 +129,6 @@ const TextType = ({
     }
 
     return () => clearTimeout(timeout);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     currentCharIndex,
     displayedText,
@@ -172,15 +157,13 @@ const TextType = ({
       className: `inline-block whitespace-pre-wrap tracking-tight ${className}`,
       ...props,
     },
-    <span className="inline" style={{ color: getCurrentTextColor() }}>
-      {displayedText}
-    </span>,
+    <span className={`inline ${textClassName}`}>{displayedText}</span>,
     showCursor && (
       <span
         ref={cursorRef}
         className={`ml-1 inline-block opacity-100 ${
           shouldHideCursor ? "hidden" : ""
-        } ${cursorClassName}`}
+        } ${cursorClassName} ${textClassName}`} // <-- cursor now matches text color
       >
         {cursorCharacter}
       </span>
