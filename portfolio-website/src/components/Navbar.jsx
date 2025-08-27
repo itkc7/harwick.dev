@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useTheme } from "../context/ThemeContext";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { darkMode, toggleDarkMode } = useTheme();
@@ -57,7 +58,7 @@ const Navbar = () => {
           onClick={toggleDarkMode}
         ></i>
       </div>
-      <div>
+      <div className="lg:-mr-20">
         <a
           href="#home"
           className={`group lg:text-lg md:text-base text-sm font-light
@@ -138,6 +139,18 @@ const Navbar = () => {
                    }`}
           ></span>
         </a>
+
+        <Link
+          to="/blog"
+          className={`group lg:text-lg md:text-base text-sm font-light text-gray-600 dark:text-white
+    lg:mr-12 mr-8 tracking-wide relative`}
+        >
+          Blog
+          <span
+            className={`absolute -bottom-1 left-0 w-full h-[1px] bg-gray-600 dark:bg-white transform scale-x-0 group-hover:scale-x-100
+       group-hover:origin-left origin-right transition duration-300`}
+          ></span>
+        </Link>
       </div>
     </div>
   );
