@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import ToggleVideoPlayer from "../components/ToggleVideoPlayer";
 import { useTheme } from "../context/ThemeContext";
+import BlogDisplay from "../components/BlogDisplay"
 
 export default function Blog() {
   const { darkMode, toggleDarkMode } = useTheme();
@@ -36,6 +37,8 @@ export default function Blog() {
           video2="/videos/Onomichi_natural.mp4"
         />
 
+        <BlogDisplay/>
+        
         {/* <div className="mt-8 p-4 rounded-lg bg-gray-100 dark:bg-gray-800">
           <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
             Blog Post Title
