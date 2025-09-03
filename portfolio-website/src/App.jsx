@@ -8,7 +8,6 @@ import CurrentlyPlaying from "./components/CurrentlyPlaying";
 import { ThemeProvider } from "./context/ThemeContext";
 import Blog from "./pages/Blog";
 
-// 🔸 Your existing homepage logic moved into MainPage
 const MainPage = () => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -40,8 +39,6 @@ const MainPage = () => {
 const App = () => {
   return (
     <ThemeProvider>
-      {" "}
-      {/* Only one ThemeProvider at the top level */}
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/blog" element={<Blog />} />
