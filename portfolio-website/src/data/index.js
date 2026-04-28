@@ -26,14 +26,36 @@ export const aboutText = `Hi! I'm Kyle Harwick, a recent University of Pittsburg
 export const skillCards = [
   {
     icons: {
-      primary: "bx bxl-java",
+      primary: "bxl bx-code",
+      secondary: "bx bxl-javascript",
+      third: "bx bxs-group",
+      fourth: "bx bxl-react",
+    },
+    title: "University of Pittsburgh LOL@Pitt Head Front End Developer",
+    description:
+      "Recently, I had the opportunity to lead the front end development for my University's League of Legends club website. I worked with a small team to build a website for the team, which included a player and match database, as well as a news section and an events calendar. This project was built with React and Next.js, and I had to effectively communicate with my team in order to achieve a final product. ",
+    projectCount: 1,
+    hoverPosition: {
+      large: "bottom",
+      small: "bottom",
+    },
+    links: [
+      {
+        url: "https://openleagueseries.com",
+        icon: "bx bx-link",
+      },
+    ],
+  },
+  {
+    icons: {
+      primary: "bx bxl-react",
       secondary: "bx bxl-javascript",
       third: "bx bxs-group",
       fourth: "bx bx-library",
     },
     title: "Grass Gurus Lead Web Developer",
     description:
-      "I recently had the privilege to become the lead and sole developer for a local company's business. Built with React, I had to for the first time effectively communicate with a client in order to achieve a final product. ",
+      "Last year I had the privilege to become the lead and sole developer for a local company's business. Built with React, I had to for the first time effectively communicate with a client in order to achieve a final product. ",
     projectCount: 1,
     hoverPosition: {
       large: "bottom",
@@ -42,8 +64,8 @@ export const skillCards = [
     links: [
       {
         url: "https://grassgurus.info",
-        icon: "bx bx-link"
-      }
+        icon: "bx bx-link",
+      },
     ],
   },
   {
