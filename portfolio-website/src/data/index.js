@@ -102,7 +102,7 @@ export const skillCards = [
       "Communication Breakdown is a Japanese-English translation and linguistic breakdown webapp built with Python and Flask. The translation was originally handled through DeepLX API, and I had been hosting this site through Render and had to have a container for this API open at all times. However, this API has deprecated, so I will be rebuilding this project in the near future in a much more robust manner. The linguistic breakdown logic is handlded mainly by SpaCy NLP. Linked is my original Communication Repo, the Render build, and the newer in-progress repo.",
     projectCount: 3,
     hoverPosition: {
-      large: "bottom",
+      large: "top",
       small: "bottom",
     },
     links: [
@@ -164,7 +164,9 @@ export const skillCards = [
       },
     ],
   },
-  {
+];
+
+export const resumePlaceholder = {
     icons: {
       primary: "bx bxs-file",
       secondary: "",
@@ -174,10 +176,9 @@ export const skillCards = [
     projectCount: 0,
     hoverPosition: {
       large: "top",
-      small: "bottom",
+      small: "top",
     },
     links: [],
     isResume: true,
-  },
-];
+  }
 

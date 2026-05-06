@@ -63,10 +63,10 @@ const Services = () => {
         {skillCards.map((card, index) => (
           <div
             key={index}
-            className={`lg:max-w-[280px] md:max-w-[400px] max-w-[320px] 
+            className={`lg:max-w-[280px] md:max-w-[400px] max-w-[320px]
                   w-full mx-auto rounded-sm ring-2 ring-gray-400/20 shadow-md cursor-default shadow-gray-700/20 relative isolate
                   h-[280px] md:h-[320px]
-                  ${card.isResume ? "resume-card" : ""}
+                  ${card.isResume ? "resume-card lg:col-span-3 lg:w-full lg:max-w-full" : ""}
                   transition-all duration-300 ease-in-out
                   ${
                     card.isResume && hoveredCardIndex === index
